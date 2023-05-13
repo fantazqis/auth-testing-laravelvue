@@ -24,13 +24,19 @@ window.Vue = require('vue').default;
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('home-page', require('./components/HomePage.vue').default);
+Vue.component('login-page', require('./components/LoginPage.vue').default);
+Vue.component('nav-bar', require('./components/NavBar.vue').default);
+Vue.component('dashboard-component', require('./components/DashboardComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+axios.defaults.withCredentials = true
 
+Vue.config.productionTip = false
 
 Vue.use(VueRotuer);
 const router = new VueRotuer({
